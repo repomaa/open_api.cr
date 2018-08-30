@@ -1,0 +1,9 @@
+name: open_api
+version: 0.1.0
+
+authors:
+  - Joakim Reinert <mail@jreinert.com>
+
+crystal: 0.26.0
+
+license: MIT
