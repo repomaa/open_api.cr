@@ -27,7 +27,7 @@ module OpenAPI
     field any_of : Array(Schema | Reference)?
     field not : (Schema | Reference)?
     field items : (Schema | Reference)?
-    field properties : Hash(String, (Schema | Reference))?
+    field properties : Hash(Symbol, (Schema | Reference))?
     field additional_properties : (Bool | Schema | Reference)?
     field description : String?
     field format : String?
