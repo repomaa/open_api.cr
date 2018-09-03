@@ -18,7 +18,7 @@ module OpenAPI
     field operation_id : String?
     field parameters : Array(Parameter | Reference)?
     field request_body : (RequestBody | Reference)?
-    field responses : Hash(String, Response)?
+    field responses : Hash(String, Response)
     field callbacks : Hash(String, (Hash(String, PathItem) | Reference))?
     field deprecated : Bool?
     field security : Array(Hash(String, Array(String)))?
