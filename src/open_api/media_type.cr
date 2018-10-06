@@ -7,7 +7,7 @@ module OpenAPI
     include Object
 
     field schema : (Schema | Reference)?
-    field example : JSON::Any?
+    field example : JSON::Any::Type
     field examples : Hash(String, Example | Reference)?
     field encoding : Hash(String, Encoding)?
   end

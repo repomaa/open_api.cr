@@ -6,7 +6,7 @@ module OpenAPI
 
     field summary : String?
     field description : String?
-    field value : JSON::Any?
+    field value : JSON::Any::Type
     field external_value : String?
   end
 end

@@ -17,7 +17,7 @@ module OpenAPI
     field explode : Bool?
     field allow_reserved : Bool?
     field schema : (Schema | Reference)?
-    field example : JSON::Any?
+    field example : JSON::Any::Type
     field examples : Hash(String, Example | Reference)?
   end
 end

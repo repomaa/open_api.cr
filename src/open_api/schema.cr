@@ -20,7 +20,7 @@ module OpenAPI
     field max_properties : Int32?
     field min_properties : Int32?
     field required : Array(String)?
-    field enum : Array(JSON::Any)?
+    field enum : Array(JSON::Any::Type)?
     field type : String
     field all_of : Array(Schema | Reference)?
     field one_of : Array(Schema | Reference)?
@@ -31,6 +31,6 @@ module OpenAPI
     field additional_properties : (Bool | Schema | Reference)?
     field description : String?
     field format : String?
-    field default : JSON::Any?
+    field default : JSON::Any::Type
   end
 end
