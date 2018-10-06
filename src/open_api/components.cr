@@ -16,14 +16,14 @@ module OpenAPI
   struct Components
     include Object
 
-    field schemas : Hash(Symbol, Schema | Reference)?
-    field responses : Hash(Symbol, Response | Reference)?
-    field parameters : Hash(Symbol, Parameter | Reference)?
-    field examples : Hash(Symbol, Example | Reference)?
-    field request_bodies : Hash(Symbol, RequestBody | Reference)?
-    field headers : Hash(Symbol, Header | Reference)?
-    field security_schemes : Hash(Symbol, Hash(String, Array(String)))?
-    field links : Hash(Symbol, Link | Reference)?
-    field callbacks : Hash(Symbol, Hash(String, PathItem) | Reference)?
+    field schemas : Hash(Symbol, Schema | Reference) = Hash(Symbol, Schema | Reference).new
+    field responses : Hash(Symbol, Response | Reference) = Hash(Symbol, Response | Reference).new
+    field parameters : Hash(Symbol, Parameter | Reference) = Hash(Symbol, Parameter | Reference).new
+    field examples : Hash(Symbol, Example | Reference) = Hash(Symbol, Example | Reference).new
+    field request_bodies : Hash(Symbol, RequestBody | Reference) = Hash(Symbol, RequestBody | Reference).new
+    field headers : Hash(Symbol, Header | Reference) = Hash(Symbol, Header | Reference).new
+    field security_schemes : Hash(Symbol, Hash(String, Array(String))) = Hash(Symbol, Hash(String, Array(String))).new
+    field links : Hash(Symbol, Link | Reference) = Hash(Symbol, Link | Reference).new
+    field callbacks : Hash(Symbol, Hash(String, PathItem) | Reference) = Hash(Symbol, Hash(String, PathItem) | Reference).new
   end
 end
