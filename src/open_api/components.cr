@@ -11,6 +11,7 @@ require "./request_body"
 require "./header"
 require "./link"
 require "./path_item"
+require "./security_scheme"
 
 module OpenAPI
   struct Components
@@ -22,7 +23,7 @@ module OpenAPI
     field examples : Hash(Symbol, Example | Reference) = Hash(Symbol, Example | Reference).new
     field request_bodies : Hash(Symbol, RequestBody | Reference) = Hash(Symbol, RequestBody | Reference).new
     field headers : Hash(Symbol, Header | Reference) = Hash(Symbol, Header | Reference).new
-    field security_schemes : Hash(Symbol, Hash(String, Array(String))) = Hash(Symbol, Hash(String, Array(String))).new
+    field security_schemes : Hash(Symbol, SecurityScheme | Reference) = Hash(Symbol, SecurityScheme | Reference).new
     field links : Hash(Symbol, Link | Reference) = Hash(Symbol, Link | Reference).new
     field callbacks : Hash(Symbol, Hash(String, PathItem) | Reference) = Hash(Symbol, Hash(String, PathItem) | Reference).new
   end
