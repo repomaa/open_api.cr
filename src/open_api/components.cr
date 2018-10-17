@@ -17,14 +17,14 @@ module OpenAPI
   struct Components
     include Object
 
-    field schemas : Hash(Symbol, Schema | Reference) = Hash(Symbol, Schema | Reference).new
-    field responses : Hash(Symbol, Response | Reference) = Hash(Symbol, Response | Reference).new
-    field parameters : Hash(Symbol, Parameter | Reference) = Hash(Symbol, Parameter | Reference).new
-    field examples : Hash(Symbol, Example | Reference) = Hash(Symbol, Example | Reference).new
-    field request_bodies : Hash(Symbol, RequestBody | Reference) = Hash(Symbol, RequestBody | Reference).new
-    field headers : Hash(Symbol, Header | Reference) = Hash(Symbol, Header | Reference).new
-    field security_schemes : Hash(Symbol, SecurityScheme | Reference) = Hash(Symbol, SecurityScheme | Reference).new
-    field links : Hash(Symbol, Link | Reference) = Hash(Symbol, Link | Reference).new
-    field callbacks : Hash(Symbol, Hash(String, PathItem) | Reference) = Hash(Symbol, Hash(String, PathItem) | Reference).new
+    field schemas : Hash(String, Schema | Reference) = Hash(String, Schema | Reference).new
+    field responses : Hash(String, Response | Reference) = Hash(String, Response | Reference).new
+    field parameters : Hash(String, Parameter | Reference) = Hash(String, Parameter | Reference).new
+    field examples : Hash(String, Example | Reference) = Hash(String, Example | Reference).new
+    field request_bodies : Hash(String, RequestBody | Reference) = Hash(String, RequestBody | Reference).new
+    field headers : Hash(String, Header | Reference) = Hash(String, Header | Reference).new
+    field security_schemes : Hash(String, SecurityScheme | Reference) = Hash(String, SecurityScheme | Reference).new
+    field links : Hash(String, Link | Reference) = Hash(String, Link | Reference).new
+    field callbacks : Hash(String, Hash(String, PathItem) | Reference) = Hash(String, Hash(String, PathItem) | Reference).new
   end
 end
