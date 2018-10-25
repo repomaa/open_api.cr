@@ -21,7 +21,7 @@ module OpenAPI
     field min_properties : Int32?
     field required : Array(String)?
     field enum : Array(JSON::Any::Type)?
-    field type : String
+    field type : String?
     field all_of : Array(Schema | Reference)?
     field one_of : Array(Schema | Reference)?
     field any_of : Array(Schema | Reference)?
