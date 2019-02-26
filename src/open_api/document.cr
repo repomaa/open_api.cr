@@ -12,7 +12,7 @@ module OpenAPI
     field openapi : String
     field info : Info
     field servers : Array(Server)?
-    field paths : Hash(String, PathItem)
+    field paths : Hash(String, PathItem) = Hash(String, PathItem).new
     field components : Components = Components.new
     field security : Hash(String, Array(String))?
     field tags : Array(Tag)?

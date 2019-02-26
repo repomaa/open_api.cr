@@ -22,5 +22,7 @@ module OpenAPI
     field trace : Operation?
     field servers : Array(Server)?
     field parameters : Array(Parameter | Reference)?
+
+    setter get, put, post, delete, options, head, patch, trace
   end
 end
