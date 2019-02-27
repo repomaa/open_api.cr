@@ -5,7 +5,7 @@ require "./parameter"
 require "./reference"
 
 module OpenAPI
-  struct PathItem
+  class PathItem
     include Object
 
     @[JSON::Field(key: "$ref")]
