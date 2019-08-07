@@ -26,5 +26,8 @@ module OpenAPI
     field security_schemes : Hash(String, SecurityScheme | Reference) = Hash(String, SecurityScheme | Reference).new
     field links : Hash(String, Link | Reference) = Hash(String, Link | Reference).new
     field callbacks : Hash(String, Hash(String, PathItem) | Reference) = Hash(String, Hash(String, PathItem) | Reference).new
+
+    def initialize
+    end
   end
 end
