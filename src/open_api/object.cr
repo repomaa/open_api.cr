@@ -12,17 +12,19 @@ module OpenAPI
       {% OBJECT_TYPES << @type %}
     end
 
-    def initialize(**args)
-      {% for ivar in @type.instance_vars %}
-        {% if ivar.type.nilable? || ivar.has_default_value? %}
-          args[{{ ivar.symbolize }}]?.try do |value|
-            @{{ ivar }} = coerce_{{ ivar }}(value)
-          end
-        {% else %}
-          @{{ ivar }} = coerce_{{ ivar }}(args[{{ ivar.symbolize }}])
+    {% begin %}
+      def initialize(**args)
+        {% for ivar in @type.instance_vars %}
+          {% if ivar.type.nilable? || ivar.has_default_value? %}
+            args[{{ ivar.symbolize }}]?.try do |value|
+              @{{ ivar }} = coerce_{{ ivar }}(value)
+            end
+          {% else %}
+            @{{ ivar }} = coerce_{{ ivar }}(args[{{ ivar.symbolize }}])
+          {% end %}
         {% end %}
-      {% end %}
-    end
+      end
+    {% end %}
 
     macro field(type_declaration)
       {% name = type_declaration.var %}
