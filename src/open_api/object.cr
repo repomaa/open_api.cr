@@ -10,16 +10,31 @@ module OpenAPI
       include YAML::Serializable
 
       {% OBJECT_TYPES << @type %}
+
+      def self.new(**args)
+        instance = allocate
+        instance.initialize(__mass_assignable_attributes: args)
+        GC.add_finalizer(instance) if instance.responds_to?(:finalize)
+        instance
+      end
+
+      macro inherited
+        def self.new(**args)
+          super
+        end
+      end
     end
 
-    def initialize(**args)
-      {% for ivar in @type.instance_vars %}
-        {% if ivar.type.nilable? || ivar.has_default_value? %}
-          args[{{ ivar.symbolize }}]?.try do |value|
-            @{{ ivar }} = coerce_{{ ivar }}(value)
-          end
-        {% else %}
-          @{{ ivar }} = coerce_{{ ivar }}(args[{{ ivar.symbolize }}])
+    def initialize(*, __mass_assignable_attributes args : T) forall T
+      {% begin %}
+        {% for ivar in @type.instance_vars %}
+          {% if ivar.type.nilable? || ivar.has_default_value? %}
+            args[{{ ivar.symbolize }}]?.try do |value|
+              @{{ ivar }} = coerce_{{ ivar }}(value)
+            end
+          {% else %}
+            @{{ ivar }} = coerce_{{ ivar }}(args[{{ ivar.symbolize }}])
+          {% end %}
         {% end %}
       {% end %}
     end
