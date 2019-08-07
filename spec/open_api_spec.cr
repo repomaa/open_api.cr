@@ -1,9 +1,7 @@
 require "./spec_helper"
 
-describe OpenApi do
-  # TODO: Write tests
-
-  it "works" do
-    false.should eq(true)
+describe OpenAPI do
+  it "compiles" do
+    OpenAPI
   end
 end
