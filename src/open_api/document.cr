@@ -14,7 +14,7 @@ module OpenAPI
     field servers : Array(Server)?
     field paths : Hash(String, PathItem) = Hash(String, PathItem).new
     field components : Components = Components.new
-    field security : Hash(String, Array(String))?
+    field security : Array(Hash(String, Array(String)))?
     field tags : Array(Tag)?
     field external_docs : ExternalDocumentation?
   end
