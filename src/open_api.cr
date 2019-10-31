@@ -1,7 +1,7 @@
 require "./open_api/*"
 
 module OpenAPI
-  VERSION = "1.2.0"
+  VERSION = "1.2.1"
 
   def self.from_yaml(yaml)
     Document.from_yaml(yaml)
