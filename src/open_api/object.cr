@@ -47,6 +47,7 @@ module OpenAPI
         field({{ name }} : {{ union_types.reduce([] of AstNode) { |types, type| types + (type.is_a?(Union) ? type.types : [type]) }.join(" | ").id }})
       {% else %}
         {% if name =~ /_/ %}
+          @[YAML::Field(key: {{ "#{name[0...1]}#{name.camelcase[1..-1]}" }})]
           @[JSON::Field(key: {{ "#{name[0...1]}#{name.camelcase[1..-1]}" }})]
         {% end %}
         getter {{ type_declaration }}
