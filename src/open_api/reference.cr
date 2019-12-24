@@ -5,6 +5,7 @@ module OpenAPI
     include Object
 
     @[JSON::Field(key: "$ref")]
+    @[YAML::Field(key: "$ref")]
     field ref : String
   end
 end
