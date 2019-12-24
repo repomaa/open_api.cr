@@ -9,6 +9,7 @@ module OpenAPI
     include Object
 
     @[JSON::Field(key: "$ref")]
+    @[YAML::Field(key: "$ref")]
     field ref : String?
     field summary : String?
     field description : String?
