@@ -32,5 +32,7 @@ module OpenAPI
     field description : String?
     field format : String?
     field default : JSON::Any::Type
+    field read_only : Bool?
+    field write_only : Bool?
   end
 end
