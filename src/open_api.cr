@@ -8,7 +8,7 @@ module OpenAPI
   end
 
   def self.from_json(json)
-    Document.from_json(yaml)
+    Document.from_json(json)
   end
 
   {% begin %}
